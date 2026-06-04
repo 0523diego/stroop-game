@@ -14,7 +14,7 @@ namespace StroopGame.Toolkit
 
         [Header("UI")]
         public TextMeshProUGUI trialText;
-        public string format = "Round {0} / {1}";
+        public string format = $"回合：{0} / {1}";
 
         public int CurrentTrial { get; private set; } = 0;
         public int TotalTrials => totalTrials;
@@ -32,6 +32,7 @@ namespace StroopGame.Toolkit
             {
                 OnAllTrialsComplete?.Invoke();
             }
+            Debug.Log("NextTrial called: " + CurrentTrial);
         }
 
         public void ResetCounter()
@@ -43,7 +44,7 @@ namespace StroopGame.Toolkit
         void UpdateUI()
         {
             if (trialText != null)
-                trialText.text = string.Format(format, CurrentTrial, totalTrials);
+                trialText.text = string.Format(format, CurrentTrial + 1, totalTrials);
         }
     }
 }

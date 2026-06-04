@@ -11,7 +11,7 @@ namespace StroopGame.Toolkit
     {
         [Header("UI")]
         public TextMeshProUGUI scoreText;
-        public string prefix = "Score: ";
+        public string prefix = "分數：";
 
         [Header("Animation")]
         public float popScale = 1.3f;

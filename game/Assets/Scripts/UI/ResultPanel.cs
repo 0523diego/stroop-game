@@ -52,12 +52,12 @@ namespace StroopGame.UI
             float cost = logger.InterferenceCostMs();
             float accuracy = logger.OverallAccuracy() * 100f;
 
-            if (titleText != null) titleText.text = "Result";
-            if (scoreText != null) scoreText.text = $"Final Score: {finalScore}";
-            if (accuracyText != null) accuracyText.text = $"Accuracy: {accuracy:F1}%";
-            if (rtCongruentText != null) rtCongruentText.text = $"Congruent RT: {congRT:F0} ms";
-            if (rtIncongruentText != null) rtIncongruentText.text = $"Incongruent RT: {incRT:F0} ms";
-            if (interferenceCostText != null) interferenceCostText.text = $"Interference Cost: {cost:F0} ms";
+            if (titleText != null) titleText.text = "結果";
+            if (scoreText != null) scoreText.text = $"最終得分：{finalScore}";
+            if (accuracyText != null) accuracyText.text = $"準確率：{accuracy:F1}%";
+            if (rtCongruentText != null) rtCongruentText.text = $"一致條件反應時間：{congRT:F0} 毫秒";
+            if (rtIncongruentText != null) rtIncongruentText.text = $"不同條件反應時間：{incRT:F0} 毫秒";
+            if (interferenceCostText != null) interferenceCostText.text = $"干擾成本：{cost:F0} 毫秒";
             if (interpretationText != null) interpretationText.text = InterpretCost(cost);
             if (exportPathText != null && !string.IsNullOrEmpty(csvPath))
                 exportPathText.text = $"Data saved: {System.IO.Path.GetFileName(csvPath)}";
@@ -65,10 +65,10 @@ namespace StroopGame.UI
 
         string InterpretCost(float costMs)
         {
-            if (costMs < 100f) return "Excellent! Immune to illusions.";
-            if (costMs < 200f) return "Good interference control.";
-            if (costMs < 400f) return "Growing. Practice more.";
-            return "Easily fooled. More training needed.";
+            if (costMs < 100f) return "太棒了！你完全不受幻覺影響。";
+            if (costMs < 200f) return "不錯，你擁有優秀的干擾控制。";
+            if (costMs < 400f) return "你擁有很多的成長空間呢，再多加練習吧！";
+            return "你太容易上當了，需要更多培訓！";
         }
     }
 }

@@ -89,9 +89,9 @@ namespace StroopGame
         {
             return CurrentStage switch
             {
-                DifficultyStage.Stage1_Training => "Stage 1: Training",
-                DifficultyStage.Stage2_Mixed => "Stage 2: Forest of Illusion",
-                DifficultyStage.Stage3_TimePressure => "Stage 3: Demon Castle",
+                DifficultyStage.Stage1_Training => "關卡一：訓練營地",
+                DifficultyStage.Stage2_Mixed => "關卡二：幻象森林",
+                DifficultyStage.Stage3_TimePressure => "關卡三：魔王城堡",
                 _ => "Unknown"
             };
         }
